@@ -1,31 +1,48 @@
 /**
- * document.write("<script language=javascript src="+url+"></script>");
- * ZG9jdW1lbnQud3JpdGUoIjxzY3JpcHQgbGFuZ3VhZ2U9amF2YXNjcmlwdCBzcmM9Imh0dHBzOi8vY2RuLmpzZGVsaXZyLm5ldC9naC9LZXZpbi1IWVgvWFNNYWluUGFnZUIyNDAyL3NyYy9yYW5kb21uZXRzLmpzIj48L3NjcmlwdD4iKQ==
- * 本文件用
+ * 本文件用于拉起其它Script，以避免Xiaoshinet正则表达式的骚扰
  */
-
-
-// link = "var script = document.createElement('script');script.setAttribute('type','text/javascript');script.setAttribute('src',\"JsLeader.js\");document.getElementsByTagName('head')[0].appendChild(script);"
-// document.write(btoa(link))
-// document.write(atob('dmFyIHNjcmlwdCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3NjcmlwdCcpO3NjcmlwdC5zZXRBdHRyaWJ1dGUoJ3R5cGUnLCd0ZXh0L2phdmFzY3JpcHQnKTtzY3JpcHQuc2V0QXR0cmlidXRlKCdzcmMnLCJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvZ2gvS2V2aW4tSFlYL0IyNDAyUGFnZXMvanMvSnNMZWFkZXIuanMiKTtkb2N1bWVudC5nZXRFbGVtZW50c0J5VGFnTmFtZSgnaGVhZCcpWzBdLmFwcGVuZENoaWxkKHNjcmlwdCk7'))
-// eval(atob('dmFyIHNjcmlwdCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ3NjcmlwdCcpO3NjcmlwdC5zZXRBdHRyaWJ1dGUoJ3R5cGUnLCd0ZXh0L2phdmFzY3JpcHQnKTtzY3JpcHQuc2V0QXR0cmlidXRlKCdzcmMnLCdodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvZ2gvS2V2aW4tSFlYL1hTTWFpblBhZ2VCMjQwMi9zcmMvcmFuZG9tbmV0cy5qcycpO2RvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCdoZWFkJylbMF0uYXBwZW5kQ2hpbGQoc2NyaXB0KTs='))
-
-function addJavaScript(url) {
-    // var script = document.createElement('script');
-    // script.setAttribute('type','text/javascript');
-    // script.setAttribute('src',url);
-    // document.getElementsByTagName('body')[0].appendChild(script);
-//容易造成延迟，但是好使
-    document.write("<script src = \"" + url + "\"></script>")
+/**
+ * 同步添加，容易造成卡顿，但是可以在script中使用<code>document.write()</code>
+ * @param url
+ */
+function addScriptSynchronously(url){
+    document.write("<script src = \""+url+"\"></script>")
 }
 
-list = [
-    "js/RandomLines.js",
-    "js/SayHello.js"
+/**
+ * 异步添加，不容易造成卡顿。由于document流已经关闭，不能使用<code>document.write()</code>，
+ * @param url
+ */
+function addScriptAsynchronously(url){
+    var script = document.createElement('script');
+    script.setAttribute('type','text/javascript');
+    script.setAttribute('src',url);
+    document.getElementsByTagName('head')[0].appendChild(script);
+}
+
+/*
+同步添加的放这里
+ */
+Synchronously = [
+
+
 ]
-for (var i = 0; i < list.length; i++) {
-    url = list[i]
-    addJavaScript("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/" + url)
+/*
+异步添加的放这里
+ */
+Asynchronously = [
+    "js/RandomLines.js",
+    "js/SayHello.js",
+]
+
+for (let i = 0, url; i < Synchronously.length; i++) {
+    url = Synchronously[i]
+    addScriptSynchronously("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/"+url)
+}
+
+for (let i = 0, url; i < Asynchronously.length; i++) {
+    url = Asynchronously[i]
+    addScriptAsynchronously("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/"+url)
 }
 
 
