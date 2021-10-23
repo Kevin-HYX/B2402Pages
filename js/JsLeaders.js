@@ -9,7 +9,11 @@ Synchronously = []
 /*
 异步添加的放这里
  */
-Asynchronously = []
+Asynchronously = [
+    "js/RandomLines.js",
+    "js/LinkCss.js",
+    "SayHello.js"
+]
 
 //根据网页内容<superlink>自动添加
 
