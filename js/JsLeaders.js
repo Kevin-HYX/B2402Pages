@@ -1,6 +1,19 @@
 /**
  * 本文件用于拉起其它Script，以避免Xiaoshinet正则表达式的骚扰
  */
+
+/*
+同步添加的放这里
+ */
+Synchronously = []
+/*
+异步添加的放这里
+ */
+Asynchronously = []
+
+//根据网页内容<superlink>自动添加
+
+
 /**
  * 同步添加，容易造成卡顿，但是可以在script中使用<code>document.write()</code>
  * @param url
@@ -20,20 +33,6 @@ function addScriptAsynchronously(url) {
     document.getElementsByTagName('head')[0].appendChild(script);
 }
 
-/*
-同步添加的放这里
- */
-Synchronously = [
-    "js/LinkCss.js"
-
-]
-/*
-异步添加的放这里
- */
-Asynchronously = [
-    "js/RandomLines.js",
-    "js/SayHello.js",
-]
 
 for (let i = 0, url; i < Synchronously.length; i++) {
     url = Synchronously[i]

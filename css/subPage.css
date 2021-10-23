@@ -1,0 +1,7 @@
+img {
+    /*图片圆角*/
+    border-radius: 5%;
+    /*图片尺寸*/
+    width: 85%;
+    height: auto;
+}

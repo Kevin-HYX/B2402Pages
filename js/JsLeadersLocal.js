@@ -10,14 +10,12 @@ function addScriptAsynchronously(url){
 
 
 Synchronously = [
-
-    "LinkCss.js"
-
 ]
 
 Asynchronously = [
-    "RandomLines.js",
-    "SayHello.js",
+    "../js/LinkCss.js",
+    "../js/RandomLines.js",
+    "../js/SayHello.js",
 ]
 
 for (let i = 0, url; i < Synchronously.length; i++) {
