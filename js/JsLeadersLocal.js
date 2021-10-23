@@ -11,6 +11,7 @@ function addScriptAsynchronously(url){
 
 Synchronously = [
 
+    "LinkCss.js"
 
 ]
 

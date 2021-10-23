@@ -1,1 +1,1 @@
-<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/Kevin-HYX/B2402Pages/css/mainpage.css">
+document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/css/mainpage.css\">")

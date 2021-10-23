@@ -5,18 +5,18 @@
  * 同步添加，容易造成卡顿，但是可以在script中使用<code>document.write()</code>
  * @param url
  */
-function addScriptSynchronously(url){
-    document.write("<script src = \""+url+"\"></script>")
+function addScriptSynchronously(url) {
+    document.write("<script src = \"" + url + "\"></script>")
 }
 
 /**
  * 异步添加，不容易造成卡顿。由于document流已经关闭，不能使用<code>document.write()</code>，
  * @param url
  */
-function addScriptAsynchronously(url){
+function addScriptAsynchronously(url) {
     var script = document.createElement('script');
-    script.setAttribute('type','text/javascript');
-    script.setAttribute('src',url);
+    script.setAttribute('type', 'text/javascript');
+    script.setAttribute('src', url);
     document.getElementsByTagName('head')[0].appendChild(script);
 }
 
@@ -24,7 +24,7 @@ function addScriptAsynchronously(url){
 同步添加的放这里
  */
 Synchronously = [
-
+    "js/LinkCss.js"
 
 ]
 /*
@@ -37,12 +37,12 @@ Asynchronously = [
 
 for (let i = 0, url; i < Synchronously.length; i++) {
     url = Synchronously[i]
-    addScriptSynchronously("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/"+url)
+    addScriptSynchronously("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/" + url)
 }
 
 for (let i = 0, url; i < Asynchronously.length; i++) {
     url = Asynchronously[i]
-    addScriptAsynchronously("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/"+url)
+    addScriptAsynchronously("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/" + url)
 }
 
 
