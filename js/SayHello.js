@@ -1,3 +1,3 @@
 !function () {
-    document.write("<h1>Go Die!</h1>")
+    document.write("<h1>Hi, Administrators!</h1>")
 }()
