@@ -1,1 +1,3 @@
-document.writeln("Hello Admins")
+!function () {
+    document.write("Hello")
+}()
