@@ -13,7 +13,7 @@
     font-size: large;
     font-weight: auto;
     font-family: "JetBrainsBold";
-    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/JetBrainsMono-Bold.woff2");
+    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/JetBrainsMono-Bold.ttf");
     /*src: local("Microsoft YaHei");*/
 }
 body{
