@@ -1,15 +1,20 @@
-img {
+super img {
     /*图片圆角*/
     border-radius: 5%;
     /*图片阴影*/
-    box-shadow: 4px 4px 6px gray;
+    box-shadow: 4px 4px 6px #888585;
     /*图片尺寸*/
 
     width: 90%;
     height: auto;
 }
+
+h1 {
+    font-family: JetBrainsBold, system-ui;
+    text-align: center;
+
+}
 @font-face {
-    font-size: 90px;
     font-weight: auto;
     font-family: "JetBrainsBold";
     src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/JetBrainsMono-Bold.ttf") format("ttf");
