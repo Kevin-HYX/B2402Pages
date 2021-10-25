@@ -5,13 +5,30 @@
     <title style="font-family: JetBrainsBold,serif">InnerTest</title>
 </head>
 <body>
-<img hidden onerror="(function(){
+<!--css-->
+<superstyle hidden="">
+    ../css/mainpage.css
+</superstyle>
+<!--css end-->
+<!--javascript-->
+<superlink hidden="">
+    ../js/RandomLines.js
+</superlink>
+<superlink hidden="">
+    ../js/SayHello.js
+</superlink>
+<!--javascript end-->
+
+<figure>
+    <img id="class_flag"
+         src="http://nbxiaoshi.net/WEB_Files/uploadfile/202110/20211023101906630.png"/>
+</figure>
+
+<img onerror="(function(){
     var script = document.createElement('script');
     script.setAttribute('type', 'text/javascript');
-    script.setAttribute('src', '../js/JsLeadersLocal.js');
+    script.setAttribute('src', '../js/Leader.js');
     document.getElementsByTagName('head')[0].appendChild(script);
-})()" src="Outter.big"/>
-<img id="class_flag"
-     src="http://nbxiaoshi.net/WEB_Files/uploadfile/202110/20211023101906630.png"/>
+})()" src="Inner." style="display:none;"/>
 </body>
 </html>
