@@ -1,46 +1,37 @@
-figure img {
-    /*图片圆角*/
-    border-radius: 5%;
-    /*图片阴影*/
-    box-shadow: 4px 4px 6px #888585;
-    /*图片尺寸*/
-
-    width: 100%;
-    height: auto;
+@font-face {
+    font-family: "JetBrainsBold";
+    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/JetBrainsMono-Bold.ttf") format("ttf");
 }
 
-.picture {
-    /*图片圆角*/
-    border-radius: 5%;
-    /*图片阴影*/
-    box-shadow: 4px 4px 6px #888585;
-    /*图片尺寸*/
+@font-face {
+    font-family: "YaHei";
+    src: local("Microsoft YaHei UI");
+}
 
-    width: 100%;
-    height: auto;
+@font-face {
+    font-family: "Comic Sans";
+    src: local("Comic Sans");
+    src: url("https://cdn.jsdelivr.net/Kevin-HYX/B2402Pages/fonts/comic.ttf") format("ttf");
 }
 
 body {
     background-color: whitesmoke;
-}
-
-h1 {
-    font-family: JetBrainsBold, system-ui;
-    text-align: center;
-
-}
-
-@font-face {
-    font-size: 30px;
-    font-weight: 20;
-    font-family: "JetBrainsBold";
-    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/JetBrainsMono-Bold.ttf") format("ttf");
-    /*src: local("Microsoft YaHei");*/
-}
-
-body {
     font-family: JetBrainsBold, serif;
     text-align: center;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+div {
+    color: whitesmoke;
+}
+
+.picture_container img {
+    /*图片圆角*/
+    border-radius: 5%;
+    /*图片阴影*/
+    box-shadow: 4px 4px 6px #888585;
+    /*图片尺寸*/
+    width: 100%;
+    height: auto;
 }
