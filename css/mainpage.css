@@ -10,20 +10,18 @@
 
 @font-face {
     font-family: "Comic Sans";
-    src: local("Comic Sans");
-    src: url("https://cdn.jsdelivr.net/Kevin-HYX/B2402Pages/fonts/comic.ttf") format("ttf");
+    src: local("Comic Sans Ms");
 }
 
 body {
-    background-color: whitesmoke;
-    font-family: JetBrainsBold, serif;
+    background-color: white;
     text-align: center;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 1cm;
+    margin-right: 1cm;
 }
 
 div {
-    color: whitesmoke;
+    background-color: white;
 }
 
 .picture_container img {
@@ -34,4 +32,10 @@ div {
     /*图片尺寸*/
     width: 100%;
     height: auto;
+}
+
+.text_huge {
+    font-family: "Comic Sans MS";
+    font-size: 40px;
+    font-weight: bold;
 }
