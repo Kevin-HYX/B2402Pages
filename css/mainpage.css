@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: "Light";
-    src: url("https://cdn.jsdelivr.net/Kevin-HYX/gh/B2402Pages/fonts/DINNextW1G-Light.OTF") format("otf");
+    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/DINNextW1G-Light.OTF") format("ttf");
 }
 
 @font-face {
@@ -46,7 +46,7 @@ div {
 }
 
 .text_huge {
-    font-family: "Light", sans-serif;
+    font-family: "Light", "Comic Sans MS", sans-serif;
     font-size: 40px;
     font-weight: bold;
 }

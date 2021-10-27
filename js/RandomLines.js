@@ -1,79 +1,115 @@
-!function () {
-    function o(w, v, i) {
-        return w.getAttribute(v) || i
-    }
+//画布的宽
+let width;
+//画布的高
+let height;
+//灰色点的集合
+let points_set = [];
+var random = Math.random;
 
-    function j(i) {
-        return document.getElementsByTagName(i)
-    }
 
-    function l() {
-        var i = j("script"), w = i.length,
-            v = i[w - 1];
-        return {
-            l: w,
-            z: o(v, "zIndex", -1),
-            o: o(v, "opacity", 0.5),
-            c: o(v, "color", "0,0,0"),
-            n: o(v, "count", 30)
+/**
+ * 从得到指定元素的特定属性
+ * @param element 相关的元素
+ * @param attribute 要得到的属性
+ * @param default_value 如果没有属性，则默认为
+ * @returns {string} 需要的属性
+ */
+function getAttribute(element, attribute, default_value) {
+    return element.getAttribute(attribute) || default_value
+}
+
+/**
+ * 通过标签名查找元素
+ * @param name 标签名
+ * @returns {HTMLCollectionOf<*>} 所有运用此标签的元素的集合
+ */
+function getEleByTagName(name) {
+    return document.getElementsByTagName(name)
+}
+
+/**
+ * 生成配置对象，包含五个数据
+ * @returns {{color: string, script_count: number, opacity: string, zIndex: string, point_count: string}} 配置对象
+ */
+function getConfigurations() {
+    var scripts      = getEleByTagName("script"),
+        script_count = scripts.length,
+        script_last  = scripts[script_count - 1];
+    return {
+        script_count: script_count,
+        zIndex: getAttribute(script_last, "zIndex", -1),
+        opacity: getAttribute(script_last, "opacity", 0.5),
+        color: getAttribute(script_last, "color", "0,0,0"),
+        point_count: getAttribute(script_last, "count", 30)
+    }
+}
+
+//设置画布的宽高，并将其赋值到width和height
+function set_size() {
+    width = canvasElement.width =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+
+    height = canvasElement.height =
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight;
+}
+
+
+function update() {
+    context.clearRect(0, 0, width, height);
+    let thisPoint;
+    for (let i = 0; i < points_set.length - 1; i++) {
+        thisPoint = points_set[i]
+        thisPoint.x += thisPoint.xa;
+        thisPoint.y += thisPoint.ya;
+        //超出边界，速度取反
+        thisPoint.xa *= ((thisPoint.x > width || thisPoint.x < 0) ? -1 : 1);
+        thisPoint.ya *= ((thisPoint.y > height || thisPoint.y < 0) ? -1 : 1);
+        //灰色的点
+        context.fillRect(thisPoint.x - 0.5, thisPoint.y - 0.5, 1, 1)
+        for (let j = i + 1; j < points_set.length; j++) {
+            let thatPoint = points_set[j];
+            let x_dis = thisPoint.x - thatPoint.x;
+            let y_dis = thisPoint.y - thatPoint.y;
+            let distance = x_dis * x_dis + y_dis * y_dis;
+            if (distance < 25000) {
+                context.beginPath()
+                context.lineWidth = 1 - distance / 25000
+                context.moveTo(thisPoint.x, thisPoint.y)
+                context.lineTo(thatPoint.x, thatPoint.y)
+                context.stroke()
+            }
         }
     }
+    frameRequest(update)
+}
 
-    function k() {
-        r = u.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth, n = u.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
-    }
-
-    function b() {
-        e.clearRect(0, 0, r, n);
-        var w = [f].concat(t);
-        var x, v, A, B, z, y;
-        t.forEach(function (i) {
-            i.y += i.ya,
-                i.xa *= i.x > r || i.x < 0 ? -1 : 1,
-                i.ya *= i.y > n || i.y < 0 ? -1 : 1,
-                //灰色的点
-                e.fillRect(i.x - 0.5, i.y - 0.5, 1, 1),
-                i.x += i.xa;
-            for (v = 0; v < w.length; v++) {
-                x = w[v];
-                if (i !== x && null !== x.x && null !== x.y) {
-                    B = i.x - x.x, z = i.y - x.y, y = B * B + z * z;
-                    //划线
-                    y < x.max && (x === f && y >= x.max / 2 && (i.x -= 0.03 * B, i.y -= 0.03 * z), A = (x.max - y) / x.max, e.beginPath(), e.lineWidth = -0.1*A*A+1, e.strokeStyle = "rgba(" + s.c + "," + (A + 0.2) + ")", e.moveTo(i.x, i.y), e.lineTo(x.x, x.y), e.stroke())
-                }
-            }
-            w.splice(w.indexOf(i), 1)
-        }), m(b)
-    }
-
-    var u = document.createElement("canvas"),
-        s = l(), c = "c_n" + s.l,
-        e = u.getContext("2d"), r, n,
-        m = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (i) {
-            window.setTimeout(i, 1000 / 45)
-        }, a = Math.random,
-        f = {x: null, y: null, max: 0};
-    u.id = c;
-    u.style.cssText = "position:fixed;top:0;left:0;z-index:" + s.z + ";opacity:" + s.o;
-    j("body")[0].appendChild(u);
-    k(), window.onresize = k;
-    window.onmousemove = function (i) {
-        i = i || window.event, f.x = i.clientX, f.y = i.clientY
-    }, window.onmouseout = function () {
-        f.x = null, f.y = null
+var canvasElement = document.createElement("canvas");
+var config = getConfigurations();
+var context = canvasElement.getContext("2d");
+var frameRequest = window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    function (i) {
+        window.setTimeout(i, 1000 / 45)
     };
-    for (var t = [], p = 0; s.n > p; p++) {
-        var h = a() * r, g = a() * n,
-            q = 2 * a() - 1, d = 2 * a() - 1;
-        t.push({
-            x: h,
-            y: g,
-            xa: q,
-            ya: d,
-            max: 20000
-        })
-    }
-    setTimeout(function () {
-        b()
-    }, 100)
-}();
+canvasElement.id = "random_lines";
+document.body.appendChild(canvasElement);
+set_size()
+window.onresize = set_size;
+for (let p = 0; config.point_count > p; p++) {
+    const x  = random() * width,
+          y  = random() * height,
+          vx = 2 * random() - 1,
+          vy = 2 * random() - 1;
+    points_set.push({
+        x: x,
+        y: y,
+        xa: vx,
+        ya: vy,
+        max: 3.16
+    })
+}
+update()
