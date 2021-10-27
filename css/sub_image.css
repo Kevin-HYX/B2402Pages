@@ -3,6 +3,7 @@
     border-radius: 5%;
     /*图片尺寸*/
     height: auto;
+    width: 100%;
 }
 
 body {
