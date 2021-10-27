@@ -4,6 +4,16 @@
 }
 
 @font-face {
+    font-family: "KaiTi";
+    src: local("楷体");
+}
+
+@font-face {
+    font-family: "Light";
+    src: url("https://cdn.jsdelivr.net/Kevin-HYX/gh/B2402Pages/fonts/DINNextW1G-Light.OTF") format("otf");
+}
+
+@font-face {
     font-family: "YaHei";
     src: local("Microsoft YaHei UI");
 }
@@ -11,17 +21,18 @@
 @font-face {
     font-family: "Comic Sans";
     src: local("Comic Sans Ms");
+    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/comic.ttf") format("ttf");
 }
 
 body {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     text-align: center;
     margin-left: 1cm;
     margin-right: 1cm;
 }
 
 div {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .picture_container img {
@@ -35,7 +46,14 @@ div {
 }
 
 .text_huge {
-    font-family: "Comic Sans MS";
+    font-family: "Light", sans-serif;
     font-size: 40px;
     font-weight: bold;
+}
+
+#random_lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
 }
