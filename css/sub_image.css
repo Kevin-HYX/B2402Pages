@@ -1,7 +1,11 @@
-simg img {
+.picture_container img {
     /*图片圆角*/
     border-radius: 5%;
     /*图片尺寸*/
-    width: 85%;
     height: auto;
+}
+
+body {
+    margin-left: 0.5cm;
+    margin-right: 0.5cm;
 }
