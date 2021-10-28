@@ -3,7 +3,7 @@
  */
 
 count = 4
-let container = document.getElementById("emoji_container");
+let container = document.getElementById("picture_container");
 const br = document.createElement("br")
 for (let i = 1, str; i <= count; i++) {
     const emoji = document.createElement("img");
