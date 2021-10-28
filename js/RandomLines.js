@@ -14,9 +14,6 @@ var random = Math.random;
  * @param default_value 如果没有属性，则默认为
  * @returns {string} 需要的属性
  */
-function getAttribute(element, attribute, default_value) {
-    return element.getAttribute(attribute) || default_value
-}
 
 /**
  * 通过标签名查找元素
@@ -28,21 +25,14 @@ function getEleByTagName(name) {
 }
 
 /**
- * 生成配置对象，包含五个数据
- * @returns {{color: string, script_count: number, opacity: string, zIndex: string, point_count: string}} 配置对象
+ * 生成配置对象，包含四个数据
+ * @returns {{color: string, opacity: number, zIndex: number, point_count: number}} 配置对象
  */
 function getConfigurations() {
-    var scripts      = getEleByTagName("script"),
-        script_count = scripts.length,
-        script_last  = scripts[script_count - 1];
-    return {
-        script_count: script_count,
-        zIndex: getAttribute(script_last, "zIndex", -1),
-        opacity: getAttribute(script_last, "opacity", 0.5),
-        color: getAttribute(script_last, "color", "0,0,0"),
-        point_count: getAttribute(script_last, "count", 30)
-    }
+    return
 }
+
+const canvasElement = document.createElement("canvas");
 
 //设置画布的宽高，并将其赋值到width和height
 function set_size() {
@@ -58,6 +48,14 @@ function set_size() {
 }
 
 
+const context = canvasElement.getContext("2d");
+
+const frameRequest = window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    function (i) {
+        window.setTimeout(i, 1000 / 45)
+    };
+
 function update() {
     context.clearRect(0, 0, width, height);
     let thisPoint;
@@ -69,7 +67,6 @@ function update() {
         thisPoint.xa *= ((thisPoint.x > width || thisPoint.x < 0) ? -1 : 1);
         thisPoint.ya *= ((thisPoint.y > height || thisPoint.y < 0) ? -1 : 1);
         //灰色的点
-        context.fillRect(thisPoint.x - 0.5, thisPoint.y - 0.5, 1, 1)
         for (let j = i + 1; j < points_set.length; j++) {
             let thatPoint = points_set[j];
             let x_dis = thisPoint.x - thatPoint.x;
@@ -87,17 +84,16 @@ function update() {
     frameRequest(update)
 }
 
-var canvasElement = document.createElement("canvas");
-var config = getConfigurations();
-var context = canvasElement.getContext("2d");
-var frameRequest = window.requestAnimationFrame ||
-    window.webkitRequestAnimationFrame ||
-    function (i) {
-        window.setTimeout(i, 1000 / 45)
-    };
+set_size()
+
+const config = {
+    zIndex: -1,
+    opacity: 0.5,
+    color: "0,0,0",
+    point_count: width * height / 25000
+};
 canvasElement.id = "random_lines";
 document.body.appendChild(canvasElement);
-set_size()
 window.onresize = set_size;
 for (let p = 0; config.point_count > p; p++) {
     const x  = random() * width,
@@ -109,7 +105,6 @@ for (let p = 0; config.point_count > p; p++) {
         y: y,
         xa: vx,
         ya: vy,
-        max: 3.16
     })
 }
 update()
