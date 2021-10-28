@@ -90,7 +90,7 @@ const config = {
     zIndex: -1,
     opacity: 0.5,
     color: "0,0,0",
-    point_count: width * height / 25000
+    point_count: 40
 };
 canvasElement.id = "random_lines";
 document.body.appendChild(canvasElement);
