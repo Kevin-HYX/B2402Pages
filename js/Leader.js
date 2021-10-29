@@ -4,7 +4,6 @@
  * 兼容性增强了，一个文件，千万用法
  */
 scripts = [
-    "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/RandomLines.js"
 ]
 csss = []
 
