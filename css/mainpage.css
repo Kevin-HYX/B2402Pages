@@ -1,23 +1,33 @@
+/*数字统一字体*/
 @font-face {
     font-family: "JetBrainsBold";
     src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/JetBrainsMono-Bold.ttf") format("ttf");
 }
 
+/*中文统一字体*/
 @font-face {
-    font-family: "KaiTi";
-    src: local("楷体");
+    font-family: "Chinese";
+    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/GangBi.TTF") format("ttf");
+    src: local("KaiTi");
 }
 
+@font-face {
+    font-family: "HandwritingBlod";
+    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/handwriting_italics.TTF") format("ttf");
+}
+
+@font-face {
+    font-family: "HandwritingLight";
+    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/handwriting_light.OTF") format("otf");
+}
+
+/*注释统一字体*/
 @font-face {
     font-family: "LightF";
     src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/DINNextW1G-Light.OTF");
 }
 
-@font-face {
-    font-family: "YaHei";
-    src: local("Microsoft YaHei UI");
-}
-
+/*清新调*/
 @font-face {
     font-family: "Comic Sans";
     src: local("Comic Sans Ms");
@@ -25,7 +35,7 @@
 }
 
 body {
-    color: black;
+    color: black !important;
     background-color: rgba(255, 255, 255, 0) !important;
     text-align: center;
 }
@@ -41,7 +51,7 @@ body {
 }
 
 .text_huge {
-    font-family: "LightF", "Comic Sans MS", sans-serif;
+    font-family: "Chinese", serif;
     font-size: 40px;
     font-weight: bold;
 }
