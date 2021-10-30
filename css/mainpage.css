@@ -7,12 +7,12 @@
 /*中文统一字体*/
 @font-face {
     font-family: shufa;
-    src: url(../fonts/sushi.TTF) format("truetype");
+    src: url(https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/sushi.TTF) format("truetype");
 }
 
 @font-face {
     font-family: gangbi;
-    src: url("../fonts/shufa.TTF") format("truetype");
+    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/shufa.TTF") format("truetype");
 }
 
 
