@@ -5,6 +5,7 @@ function tow(n) {
 const text_time = document.getElementById("time");
 const text_day = document.getElementById("day");
 const newTime = new Date('2024/06/07 00:00:00').getTime();
+
 function getDate() {
 
     const oldTime = new Date().getTime();
@@ -17,8 +18,9 @@ function getDate() {
     second %= 60;
     text_day.innerHTML = tow(day_left) + '天';
     text_time.innerHTML = tow(hour_left) + '小时' + tow(minute_left) + '分钟' + tow(second) + '秒';
-    setInterval(getDate, 1000);
 }
 
-getDate();
+getDate()
+setInterval(getDate, 1000);
+
 
