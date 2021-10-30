@@ -15,6 +15,9 @@
 	<superlink hidden="">
 		../js/RandomLines.js
 	</superlink>
+	<superlink hidden="">
+		../js/countdown.js
+	</superlink>
 	<br/>
 	<!--javascript end-->
 	<div class="text_huge">
@@ -35,12 +38,6 @@
 
 	<div class=picture_container>
 		<img id="class_flag"
-		     onload="(function(){
-            var script = document.createElement('script');
-            script.setAttribute('type', 'text/javascript');
-            script.setAttribute('src', '../js/Leader.js');
-            document.getElementsByTagName('head')[0].appendChild(script);
-    })()"
 		     src="https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/image/banqi.png"/>
 	</div>
 	<br/>
@@ -50,9 +47,12 @@
 	<div class="subTitle">
 		Keep Stressed
 	</div>
-	<br>
+	<br/>
 	<div style="font-family: gangbi;text-align:center;font-size : 30px">
-		倒计时功能敬请期待
+		距离最近大考还有
+		<br/>
+		<div id="day"></div>
+		<div id="time"></div>
 	</div>
 	<br/>
 	<hr/>
@@ -81,7 +81,14 @@
 
 	<!--music time end-->
 </div>
-
+<img onerror="(function(){
+            var script = document.createElement('script');
+            script.setAttribute('type', 'text/javascript');
+            script.setAttribute('src', '../js/Leader.js');
+            document.getElementsByTagName('head')[0].appendChild(script);
+    })()"
+     src="nothing"
+     style="display: none">
 
 </body>
 </html>
