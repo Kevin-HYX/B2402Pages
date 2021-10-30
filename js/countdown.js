@@ -3,11 +3,11 @@ function tow(n) {
 }
 
 const text_time = document.getElementById("time");
-const newTime = new Date('2024/06/07 00:00:00').getTime();
-const oldTime = new Date().getTime();
 const text_day = document.getElementById("day");
-
+const newTime = new Date('2024/06/07 00:00:00').getTime();
 function getDate() {
+
+    const oldTime = new Date().getTime();
     let second = Math.floor((newTime - oldTime) / 1000);
     const day_left = Math.floor(second / 86400);
     second = second % 86400;
