@@ -2,7 +2,7 @@
  本文件专用于表情包专辑
  */
 
-count = 4
+count = 8
 let br;
 let container = document.getElementsByClassName("picture_container")[0];
 for (let i = 1, str; i <= count; i++) {
