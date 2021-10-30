@@ -1,39 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title style="font-family: JetBrainsBold,serif">
-        InnerTest</title>
+	<meta charset="UTF-8">
+	<title style="font-family: JetBrainsBold,serif">
+		InnerTest</title>
 </head>
 <body>
-<!--css-->
-<superstyle hidden="">
-    ../css/mainpage.css
-</superstyle>
-<!--css end-->
-<!--javascript-->
-<superlink hidden="">
-    ../js/RandomLines.js
-</superlink>
-<br/>
-<!--javascript end-->
-<div class="text_huge">
-     剑阁峥嵘
-</div>
-<br/>
-<hr/>
-<!--class flag-->
-<div class=picture_container>
-    <img id="class_flag"
-         onload="(function(){
+<div class="main_container"><!--css-->
+	<superstyle hidden="">
+		../css/mainpage.css
+	</superstyle>
+	<!--css end-->
+	<!--javascript-->
+	<superlink hidden="">
+		../js/RandomLines.js
+	</superlink>
+	<br/>
+	<!--javascript end-->
+	<div class="text_huge">
+		<div class="text_left">
+			剑阁峥嵘而崔嵬——
+		</div>
+		<div class="text_right">
+			一夫当关，万夫莫开
+		</div>
+	</div>
+	<br/>
+	<hr/>
+	<!--class flag-->
+	<div class="subTitle">
+		Our flag, Our Culture
+	</div>
+	<br/>
+
+	<div class=picture_container>
+		<img id="class_flag"
+		     onload="(function(){
             var script = document.createElement('script');
             script.setAttribute('type', 'text/javascript');
             script.setAttribute('src', '../js/Leader.js');
             document.getElementsByTagName('head')[0].appendChild(script);
     })()"
-         src="https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/image/banqi.png"/>
+		     src="https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/image/banqi.png"/>
+	</div>
+	<br/>
+	<hr/>
+	<!--class flag end-->
+	<!--countdown-->
+	<br/>
+	<div class="subTitle">
+		Keep Stressed
+	</div>
+	<div>
+
+	</div>
+
+	<!--countdown end-->
+	<!--music time-->
+	<div class="subTitle">
+		Music brings happiness
+	</div>
+	<br/>
+	<div style="text-align: center">
+		<span style="font-family: KaiTi;font-size: 20px;vertical-align: middle">-----琵琶行-----</span>
+		<span style="vertical-align: middle">
+		<audio controls="controls">
+			<source src="../music/琵琶行.mp3">
+		</audio>
+	</span>
+	</div>
+	<!--music time end-->
 </div>
-<!--class flag end-->
 
 
 </body>

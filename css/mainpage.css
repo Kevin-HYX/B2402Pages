@@ -1,43 +1,48 @@
 /*数字统一字体*/
 @font-face {
-    font-family: "JetBrainsBold";
-    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/JetBrainsMono-Bold.ttf") format("ttf");
+    font-family: JetBrainsBold;
+    src: url(https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/JetBrainsMono-Bold.ttf);
 }
 
 /*中文统一字体*/
 @font-face {
-    font-family: "Chinese";
-    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/GangBi.TTF") format("ttf");
-    src: local("KaiTi");
+    font-family: shufa;
+    src: url(../fonts/sushi.TTF) format("truetype");
 }
 
 @font-face {
-    font-family: "HandwritingBlod";
-    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/handwriting_italics.TTF") format("ttf");
+    font-family: HandwritingBlod;
+    src: url(https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/handwriting_italics.TTF);
 }
 
 @font-face {
-    font-family: "HandwritingLight";
-    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/handwriting_light.OTF") format("otf");
+    font-family: HandwritingLight;
+    src: url(https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/handwriting_light.OTF);
 }
 
 /*注释统一字体*/
 @font-face {
-    font-family: "LightF";
-    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/DINNextW1G-Light.OTF");
+    font-family: LightF;
+    src: url(https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/DINNextW1G-Light.OTF);
 }
 
 /*清新调*/
 @font-face {
-    font-family: "Comic Sans";
+    font-family: Comic Sans;
     src: local("Comic Sans Ms");
-    src: url("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/comic.ttf") format("ttf");
+    src: url(https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/comic.ttf);
 }
 
-body {
+.main_container {
     color: black !important;
     background-color: rgba(255, 255, 255, 0) !important;
-    text-align: center;
+}
+
+.subTitle {
+    font-size: 40px;
+    font-family: HandwritingLight, fantasy;
+    font-style: initial;
+    font-weight: lighter;
 }
 
 .picture_container img {
@@ -45,15 +50,30 @@ body {
     border-radius: 5%;
     /*图片阴影*/
     box-shadow: 4px 4px 6px #888585;
+    margin-left: 1cm;
+    margin-right: 1cm;
     /*图片尺寸*/
-    width: 100%;
+    width: 90%;
     height: auto;
 }
 
+.text_right {
+    text-align: right;
+    margin-right: 0.4cm;
+}
+
+.text_left {
+    text-align: left;
+    margin-left: 0.4cm;
+}
+
+.text_center {
+    text-align: center;
+}
+
 .text_huge {
-    font-family: "Chinese", serif;
-    font-size: 40px;
-    font-weight: bold;
+    font-family: shufa;
+    font-size: 60px;
 }
 
 #random_lines {
