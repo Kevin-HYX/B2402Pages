@@ -11,6 +11,12 @@
 }
 
 @font-face {
+    font-family: gangbi;
+    src: url("../fonts/shufa.TTF") format("truetype");
+}
+
+
+@font-face {
     font-family: HandwritingBlod;
     src: url(https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/handwriting_italics.TTF);
 }
@@ -43,6 +49,13 @@
     font-family: HandwritingLight, fantasy;
     font-style: initial;
     font-weight: lighter;
+}
+
+.music_player {
+    text-align: center;
+    font-family: gangbi;
+    font-size: 30px;
+    vertical-align: middle
 }
 
 .picture_container img {
