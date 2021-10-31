@@ -10,6 +10,6 @@ for (let i = 1, str; i <= count; i++) {
     emoji.setAttribute("src", "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/image/emojis/" + Number(i) + ".jpg")
     container.appendChild(emoji)
     br = document.createElement("br");
-    br = document.createElement("br");
+    container.appendChild(br)
     container.appendChild(br)
 }
