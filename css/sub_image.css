@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: white;
+    background-color: white !important;
     margin-left: 0.5cm;
     margin-right: 0.5cm;
 }

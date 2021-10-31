@@ -5,7 +5,9 @@
     <title>OutterView</title>
 </head>
 <body>
-<div class="main_container"><!--css-->
+<div class="main_container"
+     style="background-color: rgba(89,89,89,0)">
+	<!--css-->
 	<superstyle hidden="">
 		https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/css/mainpage.css
 	</superstyle>
@@ -14,15 +16,21 @@
 	<superlink hidden="">
 		https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/RandomLines.js
 	</superlink>
+	<superlink hidden="">
+		https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/MusicLoader.js
+	</superlink>
+	<superlink hidden="">
+		https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/countdown.js
+	</superlink>
 	<br/>
 	<!--javascript end-->
 	<div class="text_huge">
-		<div class="text_left">
-			剑阁峥嵘而崔嵬——
+		<div class="text_center">
+			万圣节快乐！！！
 		</div>
-		<div class="text_right">
-			一夫当关，万夫莫开
-		</div>
+		<!--		<div class="text_right">-->
+		<!--			一夫当关，万夫莫开-->
+		<!--		</div>-->
 	</div>
 	<br/>
 	<hr/>
@@ -31,6 +39,7 @@
 		Our flag, Our Culture
 	</div>
 	<br/>
+
 	<div class=picture_container>
 		<img id="class_flag"
 		     src="https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/image/banqi.png"/>
@@ -42,9 +51,12 @@
 	<div class="subTitle">
 		Keep Stressed
 	</div>
-	<br>
-	<div style="font-family: gangbi;text-align:center;font-size : 30px">
-		倒计时功能敬请期待
+	<br/>
+	<div style="font-family: gangbi;text-align:center;font-size : 60px">
+		距离中考还有
+		<br/>
+		<div id="day"></div>
+		<div id="time"></div>
 	</div>
 	<br/>
 	<hr/>
@@ -54,14 +66,17 @@
 		For Music Lovers
 	</div>
 	<br/>
-	<div class="music_player">
-		-----琵琶行-----
-		<span style="vertical-align: middle">
-		<audio controls="controls">
-			<source src="https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/music/琵琶行.mp3">
-		</audio>
-	</span>
+	<div id="music_time">
+
 	</div>
+	<!--	<div class="music_player">-->
+	<!--		-&#45;&#45;&#45;&#45;琵琶行-&#45;&#45;&#45;&#45;-->
+	<!--		<span style="vertical-align: middle">-->
+	<!--		<audio controls="controls">-->
+	<!--			<source src="https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/music/琵琶行.mp3">-->
+	<!--		</audio>-->
+	<!--			检测到拦截-->
+	<!--	</span>-->
 	<br/>
 	<div class="music_player"
 	     style="text-align: left;font-size: 20px">
@@ -78,6 +93,8 @@
             script.setAttribute('type', 'text/javascript');
             script.setAttribute('src', 'https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/Leader.js');
             document.getElementsByTagName('head')[0].appendChild(script);
-    })()" src="nothing" style="display: none">
+    })()"
+     src="nothing"
+     style="display: none">
 </body>
 </html>
