@@ -45,6 +45,7 @@
 }
 
 .subTitle {
+    text-align: -moz-left;
     font-size: 40px;
     font-family: HandwritingLight, fantasy;
     font-style: initial;
@@ -90,7 +91,7 @@
 }
 
 #random_lines {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: -2;

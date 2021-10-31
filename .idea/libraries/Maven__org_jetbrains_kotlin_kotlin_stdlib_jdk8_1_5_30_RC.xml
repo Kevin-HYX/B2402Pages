@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30-RC">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.5.30-RC/kotlin-stdlib-jdk8-1.5.30-RC.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.5.30-RC/kotlin-stdlib-jdk8-1.5.30-RC-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.5.30-RC/kotlin-stdlib-jdk8-1.5.30-RC-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
