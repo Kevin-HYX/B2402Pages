@@ -3,7 +3,7 @@ const main_div = document.getElementById("music_time");
 
 $.ajax({
     type: 'GET',
-    url: "../json/new.json",
+    url: "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/new.json",
     async: true,
     dataType: 'json',
     success(res) {
