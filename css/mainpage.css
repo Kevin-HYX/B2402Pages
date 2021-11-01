@@ -85,6 +85,10 @@
     text-align: center;
 }
 
+.main_container {
+    background-color: rgba(87, 87, 87, 0) !important;
+}
+
 .text_huge {
     font-family: shufa;
     font-size: 80px;

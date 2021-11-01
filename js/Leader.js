@@ -3,9 +3,10 @@
  * 现在能够拉起css和js
  * 兼容性增强了，一个文件，千万用法
  */
-scripts = [
-]
+scripts = []
 csss = []
+
+document.getElementsByClassName("main_container")[0].style.backgroundColor = "59595900"
 
 //根据网页内容<superlink>自动添加
 let text;
