@@ -3,7 +3,7 @@ const main_div = document.getElementById("music_time");
 
 $.ajax({
     type: 'GET',
-    url: "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/new.json",
+    url: "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/new.json?v="+Math.random().toString(),
     async: true,
     dataType: 'json',
     success(res) {
@@ -31,7 +31,7 @@ $.ajax({
 
 $.ajax({
     type: 'GET',
-    url: "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/old.json",
+    url: "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/old.json?v="+Math.random().toString(),
     async: true,
     dataType: 'json',
     success(res) {

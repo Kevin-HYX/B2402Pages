@@ -41,11 +41,11 @@ function addCssAsynchronously(url) {
 
 for (let i = 0, url; i < csss.length; i++) {
     url = csss[i]
-    addCssAsynchronously(url)
+    addCssAsynchronously(url+"?v="+Math.random().toString())
 }
 for (let i = 0, url; i < scripts.length; i++) {
     url = scripts[i]
-    addScriptAsynchronously(url)
+    addScriptAsynchronously(url+"?v="+Math.random().toString())
 
 }
 
