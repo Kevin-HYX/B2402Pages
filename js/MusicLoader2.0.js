@@ -30,12 +30,11 @@ $.ajax({
     dataType: 'json',
     success(response) {
         let sub_div = Object()
-        let create = document.createElement
         Element.prototype.appendNew = function (name) {
-            var newChild = create(name);
+            var newChild = document.createElement(name);
             this.appendChild(newChild)
             return newChild
-        }
+        };
         // for (let i = 0; i < res.length; i++) {
         //     //播放器所在容器
         //     const music_div = document.createElement("div");
@@ -87,10 +86,10 @@ $.ajax({
         //设置先后顺序
         let div_array = []
         for (let i = 0; i < response.length; i++) {
-            let div = main_div.appendNew
-            div.setAttribute("class", "music_player");
+            let di = main_div.appendNew("div")
+            di.setAttribute("class", "music_player");
 
-            div_array.push(div("div"))
+            div_array.push(di)
         }
         //开始异步注入音乐
         /*
@@ -103,7 +102,8 @@ $.ajax({
          },
          */
         for (let i = 0; i < response.length; i++) {
-            let headURL = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/head.json?v=${Math.random().toString()}`;
+            //?v=${Math.random().toString()}
+            let headURL = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/${response[i].dir_name.toString()}.json`;
             $.ajax({
                 type: 'GET',
                 url: headURL,
@@ -112,6 +112,7 @@ $.ajax({
                 success(res) {
                     //音乐区块总div
                     const block_div = div_array[i];
+                    block_div.innerHTML = response[i].title.toString()
                     for (let i = 0; i < res.length; i++) {
                         //播放器
                         const audio = block_div.appendNew("audio")
