@@ -6,7 +6,6 @@
 scripts = []
 csss = []
 
-document.getElementsByClassName("main_container")[0].style.backgroundColor = "59595900"
 
 //根据网页内容<superlink>自动添加
 let text;
