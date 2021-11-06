@@ -60,7 +60,6 @@ $.ajax({
          */
         for (let i = 0; i < response.length; i++) {
             let url = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/${response[i].dir_name.toString()}.json?v=${Math.random().toString()}`;
-            console.log(url)
             $.ajax({
                 type: 'GET',
                 url: url,
@@ -74,8 +73,6 @@ $.ajax({
                     title.innerText  = response[i].title.toString()
 
                     for (let j = 0; j < res.length; j++) {
-                        console.log(response[j].dir_name)
-                        console.log(res[j].name)
                         let music_div = block_div.appendNew("div")
                         //音乐名
                         let music_name = music_div.appendNew("span")
@@ -89,7 +86,6 @@ $.ajax({
                         //链接音频
                         const source = audio.appendNew("source")
                         const link = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/music/${response[i].dir_name.toString()}/${res[j].name.toString()}.mp3`
-                        console.log(link)
                         source.setAttribute("src",link )
                     }
                     block_div.appendNew("hr")
