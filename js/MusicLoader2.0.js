@@ -3,7 +3,7 @@ const main_div = document.getElementById("music_time");
 function getWeekStr() {
     let str;
     let week = new Date().getDate()
-    if (week === 0) {
+    if (week === 7) {
         str = "Sun";
     } else if (week === 1) {
         str = "Mon";
@@ -35,7 +35,6 @@ $.ajax({
             this.appendChild(newChild)
             return newChild
         };
-
         response.unshift({
             title: "每日新歌",
             dir_name: getWeekStr()
