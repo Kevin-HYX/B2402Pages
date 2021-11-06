@@ -44,9 +44,7 @@ for (let i = 0, url; i < csss.length; i++) {
 }
 for (let i = 0, url; i < scripts.length; i++) {
     url = scripts[i]
-    //+"?v="+Math.random().toString()
-    addScriptAsynchronously(url)
-
+    addScriptAsynchronously(url+"?v="+Math.random().toString())
 }
 
 
