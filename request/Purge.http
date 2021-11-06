@@ -2,6 +2,10 @@ GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/Leader.js
 ###
 GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/MusicLoader2.0.js
 ###
+GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/countdown.js
+###
+GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/css/mainpage.css
+###
 GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/head.json
 ###
 GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Classic.json
