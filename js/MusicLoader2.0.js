@@ -2,8 +2,8 @@ const main_div = document.getElementById("music_time");
 
 function getWeekStr() {
     let str;
-    let week = new Date().getDate()
-    if (week === 7) {
+    let week = new Date().getDay()
+    if (week === 0) {
         str = "Sun";
     } else if (week === 1) {
         str = "Mon";
