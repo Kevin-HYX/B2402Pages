@@ -85,16 +85,21 @@
     text-align: center;
 }
 
-.main_container {
-    background-color: rgba(87, 87, 87, 0) !important;
-}
-.div{
-    background-color: rgba(87, 87, 87, 0) !important;
+
+
+.music_block_title {
+    : left;
+    margin-left: 0.6cm;
 }
 
 .text_huge {
     font-family: shufa;
     font-size: 80px;
+}
+.music_title{
+    text-align: left;
+    margin-left: 0.6cm;
+    font-weight: bolder;
 }
 
 #random_lines {
@@ -102,5 +107,8 @@
     top: 0;
     left: 0;
     z-index: -2;
+}
+.content .content_article {
+    background-color: rgba(0, 0, 0, 0) !important;
 }
 

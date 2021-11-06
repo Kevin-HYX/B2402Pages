@@ -35,52 +35,9 @@ $.ajax({
             this.appendChild(newChild)
             return newChild
         };
-        // for (let i = 0; i < res.length; i++) {
-        //     //播放器所在容器
-        //     const music_div = document.createElement("div");
-        //     music_div.setAttribute("class", "music_player");
-        //     music_div.innerText = res[i].name.toString()
-        //     //播放器
-        //     const audio = document.createElement("audio");
-        //     audio.setAttribute("controls", "controls");
-        //     //链接音频
-        //     const source = document.createElement("source")
-        //     source.setAttribute("src", "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/music/New/" + res[i].name.toString())
-        //
-        //     //添加
-        //     audio.appendChild(source);
-        //     music_div.appendChild(audio)
-        //     main_div.appendChild(music_div)
-        // }
-        // const newHR = document.createElement("hr")
-        // main_div.appendChild(newHR)
-        // $.ajax({
-        //     type: 'GET',
-        //     url: "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/old.json?v=" + Math.random().toString(),
-        //     async: true,
-        //     dataType: 'json',
-        //     success(res) {
-        //         for (let i = 0; i < res.length; i++) {
-        //             //播放器所在容器
-        //             const music_div = document.createElement("div");
-        //             music_div.setAttribute("class", "music_player");
-        //             music_div.innerText = res[i].name.toString()
-        //             //播放器
-        //             const audio = document.createElement("audio");
-        //             audio.setAttribute("controls", "controls");
-        //             //链接音频
-        //             const source = document.createElement("source")
-        //             source.setAttribute("src", "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/music/Old/" + res[i].name.toString())
-        //
-        //             //添加
-        //             audio.appendChild(source);
-        //             music_div.appendChild(audio)
-        //             main_div.appendChild(music_div)
-        //         }
-        //     }
-        // })
+
         response.unshift({
-            name: "每日新歌",
+            title: "每日新歌",
             dir_name: getWeekStr()
         })
         //设置先后顺序
@@ -102,24 +59,38 @@ $.ajax({
          },
          */
         for (let i = 0; i < response.length; i++) {
-            //?v=${Math.random().toString()}
-            let headURL = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/${response[i].dir_name.toString()}.json`;
+            let url = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/${response[i].dir_name.toString()}.json?v=${Math.random().toString()}`;
+            console.log(url)
             $.ajax({
                 type: 'GET',
-                url: headURL,
+                url: url,
                 async: true,
                 dataType: 'json',
                 success(res) {
                     //音乐区块总div
                     const block_div = div_array[i];
-                    block_div.innerHTML = response[i].title.toString()
-                    for (let i = 0; i < res.length; i++) {
+                    let title = block_div.appendNew("div");
+                    title.setAttribute("class","music_title")
+                    title.innerText  = response[i].title.toString()
+
+                    for (let j = 0; j < res.length; j++) {
+                        console.log(response[j].dir_name)
+                        console.log(res[j].name)
+                        let music_div = block_div.appendNew("div")
+                        //音乐名
+                        let music_name = music_div.appendNew("span")
+                        music_name.setAttribute("class", "music_name");
+                        music_name.innerText = `${res[j].name.toString()} -`
                         //播放器
-                        const audio = block_div.appendNew("audio")
+                        const audio_span = music_div.appendNew("span")
+                        audio_span.setAttribute("class","audio_player")
+                        const audio = audio_span.appendNew("audio")
                         audio.setAttribute("controls", "controls");
                         //链接音频
                         const source = audio.appendNew("source")
-                        source.setAttribute("src", `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/music/${response[i].dir_name.toString()}/${res[i].name.toString()}`)
+                        const link = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/music/${response[i].dir_name.toString()}/${res[j].name.toString()}.mp3`
+                        console.log(link)
+                        source.setAttribute("src",link )
                     }
                     block_div.appendNew("hr")
                 }

@@ -22,13 +22,13 @@ fun main() {
 }
 
 class MusicDir(val direction: File) {
-    val name: String = direction.name
+    val dir_name: String = direction.name
 
     var jsonFile:File
 
 
     init {
-        jsonFile = jsonRoot.createChild("$name.json")
+        jsonFile = jsonRoot.createChild("$dir_name.json")
         val success =jsonFile.createNewFile()
         print(success)
     }
@@ -39,7 +39,7 @@ class MusicDir(val direction: File) {
             .toList()
 }
 
-data class Song(val name: String)
+data class Song(val music_name: String)
 
 fun List<Song>.convertToJsonString(): String {
     val g = Gson()
