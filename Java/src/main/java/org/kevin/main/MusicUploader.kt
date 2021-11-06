@@ -39,7 +39,7 @@ class MusicDir(val direction: File) {
             .toList()
 }
 
-data class Song(val music_name: String)
+data class Song(val name: String)
 
 fun List<Song>.convertToJsonString(): String {
     val g = Gson()
