@@ -47,6 +47,7 @@ $.ajax({
 
             div_array.push(di)
         }
+
         //开始异步注入音乐
         /*
          {
@@ -57,19 +58,22 @@ $.ajax({
          "name": "Hop"
          },
          */
+        //音频播放器集合
+        const musics = []
+
         for (let i = 0; i < response.length; i++) {
             let url = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/${response[i].dir_name.toString()}.json?v=${Math.random().toString()}`;
             $.ajax({
                 type: 'GET',
                 url: url,
-                async: true,
+                async: false,
                 dataType: 'json',
                 success(res) {
                     //音乐区块总div
                     const block_div = div_array[i];
                     let title = block_div.appendNew("div");
-                    title.setAttribute("class","music_title")
-                    title.innerText  = response[i].title.toString()
+                    title.setAttribute("class", "music_title")
+                    title.innerText = response[i].title.toString()
 
                     for (let j = 0; j < res.length; j++) {
                         let music_div = block_div.appendNew("div")
@@ -79,19 +83,41 @@ $.ajax({
                         music_name.innerText = `${res[j].name.toString()} -`
                         //播放器
                         const audio_span = music_div.appendNew("span")
-                        audio_span.setAttribute("class","audio_player")
+                        audio_span.setAttribute("class", "audio_player")
                         const audio = audio_span.appendNew("audio")
                         audio.setAttribute("controls", "controls");
                         //链接音频
                         const source = audio.appendNew("source")
                         const link = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/music/${response[i].dir_name.toString()}/${res[j].name.toString()}.mp3`
-                        source.setAttribute("src",link )
+                        source.setAttribute("src", link)
+
+                        musics.push(audio)
                     }
                     block_div.appendNew("hr")
                 }
             })
         }
+        for (let i = 0; i < musics.length - 1; i++) {
+            musics[i].onended = function () {
+                musics[i + 1].play()
+            }
+        }
 
+        for (let i = 0; i < musics.length; i++) {
+            //禁止同时播放
+            musics[i].onplay = function () {
+                for (let j = 0; j < musics.length; j++) {
+                    if (j === i) continue
+
+                    musics[j].pause()
+                }
+            }
+        }
     }
 })
+
+
+/*
+ 用于防止因为刷新导致的中断
+ */
 
