@@ -1,8 +1,4 @@
 [
-  {
-    "title": "经典永流传",
-    "dir_name": "Classic"
-  },
 
   {
     "title": "来自纯音乐的优雅",
@@ -15,5 +11,9 @@
   {
     "title": "这是你们爱的八爷吗？",
     "dir_name": "BaYe"
+  },
+  {
+    "title": "PVZ!!!",
+    "dir_name": "PVZ"
   }
 ]
