@@ -1,19 +1,25 @@
 [
-
   {
-    "title": "来自纯音乐的优雅",
+    "title": "(周三特别专辑)-二次元(゜-゜)つロ ",
+    "dir_name": "0101",
+    "week": [3]
+  },
+  {
+    "title": "本周常驻专辑-童年回忆",
+    "dir_name": "Childhood"
+  },
+  {
+    "title": "(周二,周四)-来自纯音乐的优雅",
     "dir_name": "Pure music"
   },
   {
-    "title": "背不出来?不存在的",
-    "dir_name": "Endorsement"
+    "title": "(周四到周五)-Plant VS Zombies",
+    "dir_name": "PVZ",
+    "week": [4, 5]
   },
   {
-    "title": "这是你们爱的八爷吗？",
-    "dir_name": "BaYe"
-  },
-  {
-    "title": "PVZ!!!",
-    "dir_name": "PVZ"
+    "title": "(周日到周二)-Harry⚡Potter",
+    "dir_name": "Potter",
+    "week": [0, 1, 2]
   }
 ]

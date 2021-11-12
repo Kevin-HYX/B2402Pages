@@ -1,32 +1,35 @@
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/Leader.js
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/Leader.js
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/MusicLoader2.0.js
+
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/MusicLoader2.0.js
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/emojiLoader.js
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/emojiLoader.js
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/countdown.js
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/countdown.js
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/css/mainpage.css
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/css/mainpage.css
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/head.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/head.json
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Classic.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/PVZ.json
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Endorsement.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Pure%20music.json
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Fri.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Endorsement.json
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Sat.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Fri.json
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Sun.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Sat.json
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Mon.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Sun.json
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Thur.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Mon.json
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Wed.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Thur.json
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Two.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Wed.json
 ###
-GET http://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/BaYe.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Two.json
+###
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/BaYe.json
 ###

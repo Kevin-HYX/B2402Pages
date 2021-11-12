@@ -1,8 +1,9 @@
 const main_div = document.getElementById("music_time");
+const {getDay} = new Date()
 
 function getWeekStr() {
     let str;
-    let week = new Date().getDay()
+    let week = getDay()
     if (week === 0) {
         str = "Sun";
     } else if (week === 1) {
@@ -41,36 +42,33 @@ $.ajax({
         })
         //设置先后顺序
         let div_array = []
-        for (let i = 0; i < response.length; i++) {
-            let di = main_div.appendNew("div")
-            di.setAttribute("class", "music_player");
 
-            div_array.push(di)
-        }
-
-        //开始异步注入音乐
-        /*
-         {
-         "title": "经典永流传",
-         "dir_name": "Classic"
-         },
-         {
-         "name": "Hop"
-         },
-         */
         //音频播放器集合
         const musics = []
 
         for (let i = 0; i < response.length; i++) {
+            //update 添加对weekday的控制
+            if (
+                response[i].week !== undefined
+                &&
+                response[i].week.indexOf(getDay()) === -1
+            ) continue
+
+
+            //音乐div
+            let di = main_div.appendNew("div")
+            di.setAttribute("class", "music_player");
+            div_array.push(di)
+            //歌曲请求链接
             let url = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/${response[i].dir_name.toString()}.json?v=${Math.random().toString()}`;
             $.ajax({
                 type: 'GET',
                 url: url,
-                async: false,
+                async: false, //改为同步
                 dataType: 'json',
                 success(res) {
                     //音乐区块总div
-                    const block_div = div_array[i];
+                    const block_div = di;
                     let title = block_div.appendNew("div");
                     title.setAttribute("class", "music_title")
                     title.innerText = response[i].title.toString()
