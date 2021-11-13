@@ -25,8 +25,8 @@ function getWeekStr() {
 
 //本日新歌
 $.ajax({
-    type: 'post',
-    url: "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/head.json",
+    type: 'GET',
+    url: `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/head.json?v=${Math.random().toString()}`,
     async: false,
     dataType: 'json',
     success(response) {
@@ -60,9 +60,9 @@ $.ajax({
             di.setAttribute("class", "music_player");
             div_array.push(di)
             //歌曲请求链接
-            let url = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/${response[i].dir_name.toString()}.json`;
+            let url = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/${response[i].dir_name.toString()}.json?v=${Math.random().toString()}`;
             $.ajax({
-                type: 'POST',
+                type: 'GET',
                 url: url,
                 async: false, //改为同步
                 dataType: 'json',

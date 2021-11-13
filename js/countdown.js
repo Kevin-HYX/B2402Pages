@@ -4,7 +4,7 @@ function tow(n) {
 
 const text_time = document.getElementById("time");
 const text_day = document.getElementById("day");
-const newTime = new Date('2021/11/10 08:00:00').getTime();
+const newTime = new Date('2021/11/19 16:40:00').getTime();
 
 function getDate() {
 
