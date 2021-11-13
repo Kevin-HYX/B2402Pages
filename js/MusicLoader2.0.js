@@ -1,9 +1,9 @@
 const main_div = document.getElementById("music_time");
-const {getDay} = new Date()
+const today = new Date()
 
 function getWeekStr() {
     let str;
-    let week = getDay()
+    let week = today.getDay()
     if (week === 0) {
         str = "Sun";
     } else if (week === 1) {
@@ -25,9 +25,9 @@ function getWeekStr() {
 
 //本日新歌
 $.ajax({
-    type: 'GET',
-    url: "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/head.json?v=" + Math.random().toString(),
-    async: true,
+    type: 'post',
+    url: "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/head.json",
+    async: false,
     dataType: 'json',
     success(response) {
         let sub_div = Object()
@@ -51,7 +51,7 @@ $.ajax({
             if (
                 response[i].week !== undefined
                 &&
-                response[i].week.indexOf(getDay()) === -1
+                response[i].week.indexOf(today.getDay()) === -1
             ) continue
 
 
@@ -60,9 +60,9 @@ $.ajax({
             di.setAttribute("class", "music_player");
             div_array.push(di)
             //歌曲请求链接
-            let url = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/${response[i].dir_name.toString()}.json?v=${Math.random().toString()}`;
+            let url = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/${response[i].dir_name.toString()}.json`;
             $.ajax({
-                type: 'GET',
+                type: 'POST',
                 url: url,
                 async: false, //改为同步
                 dataType: 'json',

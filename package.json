@@ -1,0 +1,7 @@
+{
+  "name": "B2402Pages",
+  "version": "1.0.0",
+  "devDependencies": {
+    "simple-keyboard": "^3.3.22"
+  }
+}

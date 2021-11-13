@@ -6,5 +6,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="mainpage" level="application" />
     <orderEntry type="library" name="jquery-latest" level="application" />
+    <orderEntry type="library" name="jquery-3.5.1" level="application" />
+    <orderEntry type="library" name="simple-keyboard" level="application" />
   </component>
 </module>

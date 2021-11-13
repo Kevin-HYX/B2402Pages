@@ -37,12 +37,14 @@ const canvasElement = document.createElement("canvas");
 //设置画布的宽高，并将其赋值到width和height
 function set_size() {
     width = canvasElement.width =
-        window.innerWidth ||
+        window.width||
+        window.clientWidth ||
         document.documentElement.clientWidth ||
         document.body.clientWidth;
 
     height = canvasElement.height =
-        window.innerHeight ||
+        window.width||
+        window.clientHeight ||
         document.documentElement.clientHeight ||
         document.body.clientHeight;
 }
