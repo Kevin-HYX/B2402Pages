@@ -1,6 +1,7 @@
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/Leader2.1.js
 ###
-
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/Background.js
+###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/MusicLoader2.0.js
 ###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/emojiLoader.js
@@ -32,4 +33,6 @@ GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Wed.json
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Two.json
 ###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/1010.json
+###
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/image/banqi.png
 ###
