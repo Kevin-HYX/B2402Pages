@@ -6,36 +6,6 @@
  * 现在可以引入html,控制能力增强了
  */
 {
-    let scripts = []
-    let csss = []
-
-    let divs = document.getElementsByClassName("data-div");
-    for (let i = 0; i < divs.length; i++) {
-
-        $.ajax({
-            type: "GET",
-            url: divs[i].getAttribute("source"),
-            async: false,
-            dataType:"html",
-            success: function (response) {
-
-                divs[i].innerHTML = response
-            }
-        })
-    }
-
-//根据网页内容<superlink>自动添加
-    let text;
-    for (let element of document.getElementsByTagName("superlink")) {
-        text = element.textContent
-        scripts.push(text)
-    }
-    for (let element of document.getElementsByTagName("superstyle")) {
-        text = element.textContent
-        csss.push(text)
-    }
-
-
     /**
      * @param url
      */
@@ -52,6 +22,38 @@
         css_element.setAttribute('rel', 'stylesheet');
         css_element.setAttribute('href', url);
         document.head.appendChild(css_element);
+    }
+
+    let scripts = []
+    let csss = []
+    // if (typeof($)=== undefined){
+    //     addScriptAsynchronously("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/jquery-3.5.1.min.js")
+    // }
+
+    let divs = document.getElementsByClassName("data-div");
+    for (let i = 0; i < divs.length; i++) {
+
+        $.ajax({
+            type: "GET",
+            url: divs[i].getAttribute("source"),
+            async: false,
+            dataType: "html",
+            success: function (response) {
+
+                divs[i].innerHTML = response
+            }
+        })
+    }
+
+//根据网页内容<superlink>自动添加
+    let text;
+    for (let element of document.getElementsByTagName("superlink")) {
+        text = element.textContent
+        scripts.push(text)
+    }
+    for (let element of document.getElementsByTagName("superstyle")) {
+        text = element.textContent
+        csss.push(text)
     }
 
 

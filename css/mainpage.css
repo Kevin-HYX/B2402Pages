@@ -103,7 +103,7 @@
 #front_face {
     top: 0;
     left: 0;
-    position: absolute;
+    position: relative;
     margin: 0.5cm;
     opacity: 0;
     background-color: rgba(0, 0, 0, 0);
