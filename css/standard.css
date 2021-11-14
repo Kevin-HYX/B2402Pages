@@ -1,0 +1,27 @@
+/*
+全域通用css
+*/
+
+/*将班级主页右边的列表上移*/
+.menu .menu_fix {
+    top: 0 !important;
+}
+
+/*屏蔽title（天气预报和XX班主页）*/
+.head {
+    display: none !important;
+}
+
+/*彻底清除title*/
+.content_head {
+    display: none !important;
+}
+
+/*
+Modify XiaoShi's default background color
+ */
+.content .content_article {
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+

@@ -3,11 +3,7 @@
     border-radius: 5%;
     /*图片尺寸*/
     height: auto;
-    width: 100%;
+    width: auto;
     margin-left: 0.7cm;
     margin-right: 0.7cm;
-}
-
-body {
-    background-color: white !important;
 }

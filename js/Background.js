@@ -4,7 +4,7 @@
         $(window).mousemove(function () {
             console.log("C")
             last_press = new Date().getTime()
-            $("#front_face").animate({opacity: 1.0},1000)
+            $("#front_face,#gallery-wrapper,.menu_fix").animate({opacity: 1.0},1000)
             $("#back_face").animate({opacity: 0.1},1000)
         })
     })
@@ -14,7 +14,7 @@
     setInterval(function () {
         let nowTime = new Date().getTime()
         if (nowTime-last_press > 20000){
-            $("#front_face").animate({opacity:0},1000)
+            $("#front_face,#gallery-wrapper,.menu_fix").animate({opacity:0},1000)
             $("#back_face").animate({opacity:1.0},1000)
         }
     },20000)

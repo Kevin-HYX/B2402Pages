@@ -134,14 +134,8 @@
     margin: 0;
 }
 
+
 .wv-lt-refresh {
     display: none;
-}
-
-/*
-Modify XiaoShi's default background color
- */
-.content .content_article {
-    background-color: rgba(0, 0, 0, 0) !important;
 }
 

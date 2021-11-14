@@ -25,7 +25,9 @@
     }
 
     let scripts = []
-    let csss = []
+    let csss = [
+        "https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/css/standard.css"
+    ]
     // if (typeof($)=== undefined){
     //     addScriptAsynchronously("https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/jquery-3.5.1.min.js")
     // }
