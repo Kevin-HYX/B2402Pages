@@ -7,111 +7,22 @@
 	<script src="../js/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-<div class="main_container"
-     style="background-color: rgba(89,89,89,0)">
-	<!--css-->
-	<superstyle hidden="">
-		../css/mainpage.css
-	</superstyle>
-	<!--css end-->
-	<!--javascript-->
-	<superlink hidden="">
-		../js/RandomLines.js
-	</superlink>
-
-	<superlink hidden="">
-		../js/MusicLoader2.0.js
-	</superlink>
-	<superlink hidden="">
-		../js/WeatherReport.js
-	</superlink>
-	<superlink hidden="">
-		../js/countdown.js
-	</superlink>
-	<superlink hidden=" ">
-		https://widget.qweather.net/standard/static/js/he-standard-common.js?v=2.0
-	</superlink>
-	<br/>
-	<!--javascript end-->
-	<div class="text_huge">
-		<div class="text_center">
-			等风来 不如追风去
-		</div>
-		<!--		<div class="text_right">-->
-		<!--			一夫当关，万夫莫开-->
-		<!--		</div>-->
-	</div>
-	<br/>
-	<hr/>
-	<!--class flag-->
-	<div class="subTitle">
-		Our flag, Our Culture
-	</div>
-	<br/>
-
-	<div class=picture_container>
-		<img id="class_flag"
-		     src="https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/image/banqi.png"/>
-	</div>
-	<br/>
-	<hr/>
-	<!--class flag end-->
-	<!--whether report-->
-	<div class="subTitle">Advanced Weather Report</div>
-	<br/>
-
-	<div id="he-plugin-standard"></div>
-	<br/>
-	<hr/>
-
-	<!--whether report end-->
-
-	<!--countdown-->
-	<div class="subTitle">
-		Keep Stressed
-	</div>
-	<br/>
-	<div id="count_down_div"
-	     style="font-family: gangbi;text-align:center;font-size : 60px">
-		距离周五放学还有
-		<br/>
-		<div id="day"></div>
-		<div id="time"></div>
-
-		为美好周末而奋斗吧
-	</div>
-	<br/>
-	<hr/>
-	<!--countdown end-->
-	<!--music time-->
-	<div class="subTitle">
-		For Music Lovers
-	</div>
-	<br/>
-	<div id="music_time"
-	     style="vertical-align: middle">
-
-	</div>
-
-	<br/>
-	<div class="music_player"
-	     style="text-align: left;font-size: 20px">
-		正处于调试周期……
-		<br>
-		至少两周以后，完成调试
-	</div>
-
-
-	<!--music time end-->
+<div class="data-div" id="import">
+	../html/import.html
+</div>
+<div class="data-div" id="front_face">
+	../html/front_face.html
+</div>
+<div class="data-div" id="back_face">
+	../html/back_face.html
 </div>
 <img onerror="(function(){
             var script = document.createElement('script');
             script.setAttribute('type', 'text/javascript');
-            script.setAttribute('src', '../js/Leader.js');
+            script.setAttribute('src', '../js/Leader2.0.js');
             document.getElementsByTagName('head')[0].appendChild(script);
     })()"
      src="nothing"
      style="display: none">
-
 </body>
 </html>

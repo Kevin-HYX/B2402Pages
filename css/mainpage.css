@@ -39,9 +39,11 @@
     src: url(https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/comic.ttf);
 }
 
-.main_container {
+.front_face {
+    margin: 0.5cm;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
     color: black !important;
-    background-color: rgba(255, 255, 255, 0) !important;
 }
 
 .subTitle {
@@ -59,27 +61,11 @@
     vertical-align: middle
 }
 
-#he-plugin-standard {
-    width: auto !important;
-    margin-left: 0.8cm !important;
-    margin-right: 0.8cm !important;
-    /*图片阴影*/
-    box-shadow: 4px 4px 6px #888585;
-}
-.main_container a{
+
+.front_face a {
     display: none;
 }
-.picture_container img {
-    /*图片圆角*/
-    border-radius: 5%;
-    /*图片阴影*/
-    box-shadow: 4px 4px 6px #888585;
-    margin-left: 1cm;
-    margin-right: 1cm;
-    /*图片尺寸*/
-    width: 90%;
-    height: auto;
-}
+
 
 .text_right {
     text-align: right;
@@ -111,6 +97,12 @@
     font-weight: bolder;
 }
 
+#back_face {
+    z-index: -1;
+    top: 0;
+    left: 0
+}
+
 #random_lines {
     position: fixed;
     top: 0;
@@ -118,6 +110,26 @@
     z-index: -2;
 }
 
+#he-plugin-standard {
+    width: auto !important;
+    margin-left: 0.8cm !important;
+    margin-right: 0.8cm !important;
+    box-shadow: 4px 4px 6px #888585;
+}
+
+#class_flag_div {
+    width: 100%;
+}
+
+#class_flag {
+    width: 100%;
+    margin: 0;
+    border: green solid 1px;
+}
+
+/*
+Modify XiaoShi's default background color
+ */
 .content .content_article {
     background-color: rgba(0, 0, 0, 0) !important;
 }
