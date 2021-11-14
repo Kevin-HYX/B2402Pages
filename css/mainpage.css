@@ -39,12 +39,6 @@
     src: url(https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/comic.ttf);
 }
 
-.front_face {
-    margin: 0.5cm;
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0);
-    color: black !important;
-}
 
 .subTitle {
     text-align: left;
@@ -62,9 +56,9 @@
 }
 
 
-.front_face a {
-    display: none;
-}
+/*#front_face a {*/
+/*    display: none;*/
+/*}*/
 
 
 .text_right {
@@ -100,7 +94,20 @@
 #back_face {
     z-index: -1;
     top: 0;
-    left: 0
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+#front_face {
+    top: 0;
+    left: 0;
+    position: absolute;
+    margin: 0.5cm;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
+    color: black !important;
 }
 
 #random_lines {
@@ -112,6 +119,7 @@
 
 #he-plugin-standard {
     width: auto !important;
+    height: 200px;
     margin-left: 0.8cm !important;
     margin-right: 0.8cm !important;
     box-shadow: 4px 4px 6px #888585;
@@ -124,7 +132,10 @@
 #class_flag {
     width: 100%;
     margin: 0;
-    border: green solid 1px;
+}
+
+.wv-lt-refresh {
+    display: none;
 }
 
 /*

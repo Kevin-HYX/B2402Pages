@@ -3,11 +3,27 @@
  * 现在能够拉起css和js
  * 兼容性增强了，一个文件，千万用法
  * 全部转换为局部变量
+ * 现在可以引入html,控制能力增强了
  */
 {
     let scripts = []
     let csss = []
 
+    let divs = document.getElementsByClassName("data-div");
+    for (let i = 0; i < divs.length; i++) {
+        // console.log(divs[i].innerHTML)
+        console.log(divs[i].innerText);
+        $.ajax({
+            type: "GET",
+            url: divs[i].innerText,
+            async: false,
+            dataType:"html",
+            success: function (response) {
+                console.log(response.toString())
+                divs[i].innerHTML = response
+            }
+        })
+    }
 
 //根据网页内容<superlink>自动添加
     let text;
@@ -48,6 +64,5 @@
         url = scripts[i]
         addScriptAsynchronously(url + "?v=" + Math.random().toString())
     }
-
 
 }
