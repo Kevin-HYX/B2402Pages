@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>QWeather Map</title>
+	<meta http-equiv="Content-Type"
+	      content="text/html; charset=utf-8">
+	<meta name="viewport"
+	      content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+	<script type="text/javascript"
+	        src="https://a.hecdn.net/js/common/reserveLoad.min.js"></script>
+	<script>
+		var loadSelfCss = setTimeout(function () {
+			reserveLoad(['https://a.hecdn.net/sites/ws/2.4.7/css/leaflet.css', ''],
+					function () {
+					}
+			)
+		}, 300)
+
+		function clearSelfCss() {
+			clearTimeout(loadSelfCss)
+		}
+	</script>
+	<link rel="stylesheet"
+	      href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css"
+	      onload="clearSelfCss()"/>
+	<link href="https://map.qweather.com/index.657779dc4466698ff3d0.css"
+	      rel="stylesheet">
+</head>
+<body>
+<div class="map-container">
+	<div id="map"></div>
+	<!--    <div id="test" style="position: absolute;top:0;left: 0;text-align: center;padding: 130px 0 10px;width: 100%;background: red;z-index: 9999"></div>-->
+</div>
+<script>
+	var loadMapJS = setTimeout(function () {
+		reserveLoad(
+				['https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.js', 'https://a.hecdn.net/js/common/leaflet.1.7.1.js', ''],
+				function () {
+				}
+		)
+	}, 300)
+
+	function clearMapJS() {
+		clearTimeout(loadMapJS)
+	}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js"
+        onload="clearMapJS()"></script>
+<script type="text/javascript"
+        src="https://map.qweather.com/index.22725c95e70711be1394.js"></script>
+</body>
+</html>

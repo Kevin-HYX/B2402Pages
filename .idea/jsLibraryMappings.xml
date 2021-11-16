@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="file://$PROJECT_DIR$" libraries="{jquery-3.5.1, jquery-latest, simple-keyboard}" />
+    <file url="file://$PROJECT_DIR$" libraries="{index.22725c95e70711be1394, index.657779dc4466698ff3d0, jquery-3.5.1, jquery-latest, leaflet, reserveLoad, simple-keyboard}" />
     <file url="PROJECT" libraries="{mainpage}" />
   </component>
 </project>

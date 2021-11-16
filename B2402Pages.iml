@@ -8,5 +8,9 @@
     <orderEntry type="library" name="jquery-latest" level="application" />
     <orderEntry type="library" name="jquery-3.5.1" level="application" />
     <orderEntry type="library" name="simple-keyboard" level="application" />
+    <orderEntry type="library" name="reserveLoad" level="application" />
+    <orderEntry type="library" name="leaflet" level="application" />
+    <orderEntry type="library" name="index.657779dc4466698ff3d0" level="application" />
+    <orderEntry type="library" name="index.22725c95e70711be1394" level="application" />
   </component>
 </module>

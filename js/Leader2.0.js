@@ -18,7 +18,7 @@
             async: false,
             dataType:"html",
             success: function (response) {
-
+                console.log(response)
                 divs[i].innerHTML = response
             }
         })
