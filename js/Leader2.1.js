@@ -44,6 +44,8 @@ function addFrameAsynchronously(url, container) {
     $(frame).attr(
         "sandbox",
         "allow-top-navigation " +
+        "allow-same-origin " +
+
         "allow-forms " +
         "allow-scripts")
             .attr("security", "restricted")
