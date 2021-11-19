@@ -1,26 +1,26 @@
 [
   {
-    "title": "(周三特别专辑)-二次元(゜-゜)つロ ",
-    "dir_name": "0101",
-    "week": [3,6]
+    "title": "(重磅回归)经典永流传",
+    "dir_name": "Classic"
   },
   {
-    "title": "本周常驻专辑-童年回忆",
-    "dir_name": "Childhood"
+    "title": "本周常驻专辑-岛屿星辰",
+    "dir_name": "lands"
   },
   {
-    "title": "(周二,周四)-来自纯音乐的优雅",
-    "dir_name": "Pure music",
-    "week": [2,4,6]
+    "title": "明日方舟(Ⅰ)",
+    "dir_name": "mingri1",
+    "week": [1,0]
   },
   {
-    "title": "(周四到周五)-Plant VS Zombies",
-    "dir_name": "PVZ",
-    "week": [4, 5,6]
+    "title": "明日方舟（Ⅱ）",
+    "dir_name": "mingri2",
+    "week": [2,3]
   },
   {
-    "title": "(周日到周二)-Harry⚡Potter",
-    "dir_name": "Potter",
-    "week": [0, 1, 2]
+    "title": "明日方舟（Ⅲ）",
+    "dir_name": "mingri3",
+    "week": [4,5]
   }
+
 ]
