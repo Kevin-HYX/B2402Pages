@@ -8,6 +8,16 @@
     "dir_name": "lands"
   },
   {
+    "title": "中国好声音-巅峰之夜",
+    "dir_name": "dianfen",
+    "week": [2,3,4]
+  },
+  {
+    "title": "传奇戳爷",
+    "dir_name": "chuoye",
+    "week": [0,1,5]
+  },
+  {
     "title": "明日方舟(Ⅰ)",
     "dir_name": "mingri1",
     "week": [1,0]

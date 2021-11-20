@@ -12,11 +12,13 @@ GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/css/mainpage.css
 ###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/head.json
 ###
-GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/PVZ.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/html/prod/import.html
 ###
-GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Pure%20music.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/html/prod/Outter.html
 ###
-GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Childhood.json
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/html/prod/back_face.html
+###
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/html/prod/front_face.html
 ###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Fri.json
 ###
@@ -31,8 +33,6 @@ GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Thur.json
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Wed.json
 ###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Two.json
-###
-GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/1010.json
 ###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/image/banqi.png
 ###

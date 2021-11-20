@@ -38,7 +38,7 @@
         let queue = ""
         let width = window.innerWidth
         let height = window.innerHeight
-        $("body").click(function (e) {
+        $(document).click(function (e) {
             let mousey = e.clientY;
             let mousex = e.clientX;
             let x_val = Math.ceil(mousex * 3 / width)
