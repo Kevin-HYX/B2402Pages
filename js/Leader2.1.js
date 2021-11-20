@@ -10,7 +10,6 @@
  */
 
 
-
 /**
  * @param url
  */
@@ -133,8 +132,8 @@ function addFrameAsynchronously(url, container, open) {
     }
     for (let i = 0, url; i < scripts.length; i++) {
         url = scripts[i]
-        // + "?v=" + Math.random().toString()
-        addScriptAsynchronously(url)
+        addScriptAsynchronously(url + "?v=" + Math.random().toString()
+        )
     }
 
 
