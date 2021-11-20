@@ -1,6 +1,17 @@
 const main_div = document.getElementById("music_time");
 const today = new Date()
 
+String.prototype.hashCode = function () {
+    let hash = 0, i, chr;
+    if (this.length === 0) return hash;
+    for (i = 0; i < this.length; i++) {
+        chr = this.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash |= 0; // Convert to 32bit integer
+    }
+    return hash;
+};
+
 function getWeekStr() {
     let str;
     let week = today.getDay()
@@ -75,15 +86,18 @@ $.ajax({
 
                     for (let j = 0; j < res.length; j++) {
                         let music_div = block_div.appendNew("div")
-                        //音乐名
+                        //title
+
                         let music_name = music_div.appendNew("span")
                         music_name.setAttribute("class", "music_name");
                         music_name.innerText = `${res[j].name.toString()} -`
+
+
                         //播放器
-                        const audio_span = music_div.appendNew("span")
-                        audio_span.setAttribute("class", "audio_player")
-                        const audio = audio_span.appendNew("audio")
-                        audio.setAttribute("controls", "controls");
+                        const audio = music_div.appendNew("audio")
+                        $(audio).attr("controls", "controls")
+                                .attr("id", "Music" + res[j].name.toString().hashCode())
+
                         //链接音频
                         const source = audio.appendNew("source")
                         const link = `https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/music/${response[i].dir_name.toString()}/${res[j].name.toString()}.mp3`
@@ -95,6 +109,7 @@ $.ajax({
                 }
             })
         }
+        //自动连续
         for (let i = 0; i < musics.length - 1; i++) {
             musics[i].onended = function () {
                 musics[i + 1].play()
@@ -106,16 +121,76 @@ $.ajax({
             musics[i].onplay = function () {
                 for (let j = 0; j < musics.length; j++) {
                     if (j === i) continue
-
                     musics[j].pause()
                 }
             }
+
         }
+
     }
 })
 
 
 /*
  用于防止因为刷新导致的中断
+ 自动在中断处重播
+ 每秒钟都会进行记录
  */
 
+$(function (){
+    /*
+     time:记录最后更新的时间
+     id:音频的唯一id
+     seek:最新的进度
+     */
+    const information_JSON = localStorage.getItem("pauseInformation");
+    console.log(information_JSON)
+    //存在记录
+    if (information_JSON !== null && information_JSON!=="undefined") {
+        const information = JSON.parse(information_JSON)
+        //停止前记录的时间
+        let time = information.time
+        let id = information.id
+        let seek = information.seek
+        //30s后过期
+        if (time + 30000 > new Date().getTime()) {
+            //没过期,设置
+            console.log("pass")
+            let target_audio = $(`#${id}`)[0];
+            target_audio.currentTime = seek
+            target_audio.preload = "auto"
+            target_audio.autoplay = "autoPlay"
+        } else {
+            //过期,清除记录
+            localStorage.setItem("pauseInformation", undefined)
+        }
+    }
+
+    /**
+     * 返回当前正在播放的audio
+     * @returns {HTMLAudioElement}
+     */
+    function getCurrentlyPlayingAudio() {
+        const audios = document.getElementsByTagName("audio")
+        for (let i = 0;i < audios.length;i++) {
+
+            if (!audios[i].paused) {
+                return audios[i];
+            }
+        }
+    }
+
+    function record() {
+        let current = getCurrentlyPlayingAudio()
+        if (current !== undefined) {
+            const record = {
+                id: current.id,
+                time: new Date().getTime(),
+                seek: current.currentTime
+            }
+            localStorage.setItem("pauseInformation", JSON.stringify(record))
+        }
+    }
+    record()
+    setInterval(record, 500)
+})

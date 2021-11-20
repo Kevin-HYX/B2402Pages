@@ -19,17 +19,17 @@
   },
   {
     "title": "明日方舟(Ⅰ)",
-    "dir_name": "mingri1",
+    "dir_name": "mingri10",
     "week": [1,0]
   },
   {
     "title": "明日方舟（Ⅱ）",
-    "dir_name": "mingri2",
+    "dir_name": "mingri20",
     "week": [2,3]
   },
   {
     "title": "明日方舟（Ⅲ）",
-    "dir_name": "mingri3",
+    "dir_name": "mingri30",
     "week": [4,5]
   }
 

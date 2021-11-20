@@ -9,6 +9,8 @@
  * 所有的frame超链接都将失效，再也不用担心同学恶搞了
  */
 
+
+
 /**
  * @param url
  */
@@ -131,7 +133,8 @@ function addFrameAsynchronously(url, container, open) {
     }
     for (let i = 0, url; i < scripts.length; i++) {
         url = scripts[i]
-        addScriptAsynchronously(url + "?v=" + Math.random().toString())
+        // + "?v=" + Math.random().toString()
+        addScriptAsynchronously(url)
     }
 
 
