@@ -37,27 +37,49 @@ function addCssAsynchronously(url) {
  * iframe的大小等于外部容器的大小,因此其位置,大小完全由外部容器决定
  * @param {String}url iframe 的url
  * @param {Element}container iframe 外部容器,
- * @param {String}open 可选，若为“open”，则取消所有屏蔽
+ * @param {String}open
+ * 可选，若为“open”，则取消所有屏蔽,若为"limited"则启动沙盒,若为"disabled",则启动沙盒和遮罩(屏蔽一切点击)
  */
 function addFrameAsynchronously(url, container, open) {
     let frame = document.createElement('iframe')
     container.appendChild(frame)
-    $(frame).attr("security", "restricted")
-            .attr("src", url)
+    $(frame).attr("src", url)
             .attr("id", url.length)
-            .css("width", "100%")
-            .css("height", "100%")
             .attr("scrolling", "no")
             .attr("frameborder", "0")
             .attr("framespacing", "0")
             .attr("allowfullscreen", "true")
+            .css("z-index", "-1")
+            .css("width", "100%")
+            .css("height", "100%")
 
-    if (open !== "open") {
+    if (open === "limited") {
+        console.log("limited")
         $(frame).attr("sandbox",
-            "allow-top-navigation " +
-                "allow-same-origin " +
-                "allow-forms " +
-                "allow-scripts")
+            // "allow-top-navigation " +
+            "allow-same-origin " +
+            "allow-forms " +
+            "allow-scripts"
+        )
+    }
+    if (open === "disabled") {
+        console.log("disabled")
+        $(frame).attr("sandbox",
+            // "allow-top-navigation " +
+            "allow-same-origin " +
+            "allow-forms " +
+            "allow-scripts"
+        )
+        //透明遮罩层技术
+        let pu = document.createElement("div")
+        $(pu).css("height", "100%")
+             .css("width", "100%")
+             .css("position", "absolute")
+             .css("top", 0)
+             .css("left", 0)
+             .css("color", "white")
+             .css("opacity", 0)
+        container.appendChild(pu)
     }
 }
 
@@ -78,7 +100,7 @@ function addFrameAsynchronously(url, container, open) {
         console.log(i)
         $.ajax({
             type: "GET",
-            url: divs[i].getAttribute("source")+`?v=${Math.random().toString}`,
+            url: divs[i].getAttribute("source") + `?v=${Math.random().toString}`,
             async: false,
             dataType: "html",
             success: function (response) {
@@ -92,7 +114,7 @@ function addFrameAsynchronously(url, container, open) {
     let url;
     for (let element of document.getElementsByClassName("superframe")) {
         url = element.getAttribute("url")
-        addFrameAsynchronously(url, element,element.getAttribute("open"))
+        addFrameAsynchronously(url, element, element.getAttribute("open"))
     }
     for (let element of document.getElementsByTagName("superlink")) {
         url = element.textContent
