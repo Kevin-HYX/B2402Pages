@@ -12,6 +12,8 @@ GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/css/mainpage.css
 ###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/head.json
 ###
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/html/dev/Lab-in.html
+###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/html/prod/import.html
 ###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/html/prod/Outter.html
