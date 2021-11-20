@@ -3,6 +3,9 @@
     font-family: JetBrainsBold;
     src: url(https://cdn.jsdelivr.net/gh/Kevin-HYX/B2402Pages/fonts/JetBrainsMono-Bold.ttf);
 }
+.round_div{
+ border-radius: 10px;
+}
 
 /*中文统一字体*/
 @font-face {
@@ -99,6 +102,10 @@
     height: 100%;
     position: fixed;
 }
+#birthday_div td{
+    font-family: 华光中圆_CNKI;
+    text-align: center;
+}
 
 #front_face {
     top: 0;
@@ -133,7 +140,12 @@
     width: 100%;
     margin: 0;
 }
-
+#gallery-wrapper{
+    opacity: 0;
+}
+.menu_fix{
+    opacity: 0;
+}
 
 .wv-lt-refresh {
     display: none;

@@ -37,26 +37,28 @@ function addCssAsynchronously(url) {
  * iframe的大小等于外部容器的大小,因此其位置,大小完全由外部容器决定
  * @param {String}url iframe 的url
  * @param {Element}container iframe 外部容器,
+ * @param {String}open 可选，若为“open”，则取消所有屏蔽
  */
-function addFrameAsynchronously(url, container) {
+function addFrameAsynchronously(url, container, open) {
     let frame = document.createElement('iframe')
     container.appendChild(frame)
-    $(frame).attr(
-        "sandbox",
-        "allow-top-navigation " +
-        "allow-same-origin " +
-
-        "allow-forms " +
-        "allow-scripts")
-            .attr("security", "restricted")
+    $(frame).attr("security", "restricted")
             .attr("src", url)
-            .attr("id",url.length)
+            .attr("id", url.length)
             .css("width", "100%")
             .css("height", "100%")
             .attr("scrolling", "no")
             .attr("frameborder", "0")
             .attr("framespacing", "0")
             .attr("allowfullscreen", "true")
+
+    if (open !== "open") {
+        $(frame).attr("sandbox",
+            "allow-top-navigation " +
+                "allow-same-origin " +
+                "allow-forms " +
+                "allow-scripts")
+    }
 }
 
 {
@@ -73,10 +75,10 @@ function addFrameAsynchronously(url, container) {
 
     let divs = document.getElementsByClassName("data-div");
     for (let i = 0; i < divs.length; i++) {
-
+        console.log(i)
         $.ajax({
             type: "GET",
-            url: divs[i].getAttribute("source"),
+            url: divs[i].getAttribute("source")+`?v=${Math.random().toString}`,
             async: false,
             dataType: "html",
             success: function (response) {
@@ -90,7 +92,7 @@ function addFrameAsynchronously(url, container) {
     let url;
     for (let element of document.getElementsByClassName("superframe")) {
         url = element.getAttribute("url")
-        addFrameAsynchronously(url, element)
+        addFrameAsynchronously(url, element,element.getAttribute("open"))
     }
     for (let element of document.getElementsByTagName("superlink")) {
         url = element.textContent

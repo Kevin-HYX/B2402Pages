@@ -1,7 +1,7 @@
 {
     let last_press = 0
     $(document).ready(function () {
-        $(window).mousemove(function () {
+        $(document).mousemove(function () {
             console.log("C")
             last_press = new Date().getTime()
             $("#front_face,#gallery-wrapper,.menu_fix").animate({opacity: 1.0},1000)

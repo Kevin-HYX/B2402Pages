@@ -49,7 +49,7 @@
                 console.log("success")
                 do_lead()
                 localStorage.setItem("authorized", "true")
-                localStorage.setItem("authorizing_time", (new Date().getTime() + 30 * 60 * 1000).toString())
+                localStorage.setItem("authorizing_time", (new Date().getTime() + 3600000*4).toString())
                 $(this).unbind("click")
 
             }
