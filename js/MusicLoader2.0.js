@@ -159,12 +159,14 @@ $(function (){
             let target_audio = $(`#${id}`)[0];
             target_audio.currentTime = seek
             target_audio.preload = "auto"
-            target_audio.autoplay = "autoPlay"
+            target_audio.autoplay = true
         } else {
             //过期,清除记录
             localStorage.setItem("pauseInformation", undefined)
         }
     }
+
+
 
     /**
      * 返回当前正在播放的audio
@@ -193,4 +195,8 @@ $(function (){
     }
     record()
     setInterval(record, 500)
+
+    $("audio").on("pause",function () {
+        localStorage.setItem("pauseInformation", JSON.stringify(record))
+    })
 })

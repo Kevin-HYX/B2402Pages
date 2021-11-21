@@ -101,11 +101,10 @@ function addFrameAsynchronously(url, container, open) {
         console.log(i)
         $.ajax({
             type: "GET",
-            url: divs[i].getAttribute("source") + `?v=${Math.random().toString}`,
+            url: divs[i].getAttribute("source") + `?v=${Math.random().toString()}`,
             async: false,
             dataType: "html",
             success: function (response) {
-
                 divs[i].innerHTML = response
             }
         })
@@ -132,8 +131,7 @@ function addFrameAsynchronously(url, container, open) {
     }
     for (let i = 0, url; i < scripts.length; i++) {
         url = scripts[i]
-        addScriptAsynchronously(url + "?v=" + Math.random().toString()
-        )
+        addScriptAsynchronously(url + "?v=" + Math.random().toString())
     }
 
 
