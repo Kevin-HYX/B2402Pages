@@ -144,7 +144,6 @@ $(function (){
      seek:最新的进度
      */
     const information_JSON = localStorage.getItem("pauseInformation");
-    console.log(information_JSON)
     //存在记录
     if (information_JSON !== null && information_JSON!=="undefined") {
         const information = JSON.parse(information_JSON)
@@ -155,11 +154,11 @@ $(function (){
         //30s后过期
         if (time + 30000 > new Date().getTime()) {
             //没过期,设置
-            console.log("pass")
             let target_audio = $(`#${id}`)[0];
             target_audio.currentTime = seek
             target_audio.preload = "auto"
-            target_audio.autoplay = true
+            // target_audio.autoplay = true
+            target_audio.play()
         } else {
             //过期,清除记录
             localStorage.setItem("pauseInformation", undefined)
