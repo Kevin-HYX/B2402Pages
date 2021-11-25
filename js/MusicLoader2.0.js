@@ -158,7 +158,9 @@ $(function (){
             target_audio.currentTime = seek
             target_audio.preload = "auto"
             // target_audio.autoplay = true
-            target_audio.play()
+            $(document).click(function(){
+                target_audio.play()
+            })
         } else {
             //过期,清除记录
             localStorage.setItem("pauseInformation", undefined)

@@ -49,7 +49,7 @@
                 console.log("success")
                 do_lead()
                 localStorage.setItem("authorized", "true")
-                localStorage.setItem("authorizing_time", (new Date().getTime() + 3600000*4).toString())
+                localStorage.setItem("authorizing_time", (new Date().getTime() + 3600000*24).toString())
                 $(this).unbind("click")
 
             }
@@ -69,7 +69,6 @@
         }
         for (let element of document.getElementsByClassName("secretframe")) {
             let url = element.getAttribute("url");
-            console.log(url)
             addFrameAsynchronously(url, element)
         }
     }
