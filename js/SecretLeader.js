@@ -45,13 +45,14 @@
             let y_val = Math.ceil(mousey * 3 / height) - 1
             queue = queue + (x_val + y_val * 3).toString()
             console.log(queue)
-            if (queue.endsWith("31415926")) {
-                console.log("success")
+            if (queue.endsWith("24026666")) {
                 do_lead()
                 localStorage.setItem("authorized", "true")
                 localStorage.setItem("authorizing_time", (new Date().getTime() + 3600000*24).toString())
                 $(this).unbind("click")
 
+            }else if (queue.endsWith("159357")){
+                localStorage.setItem("authorized", "false")
             }
         })
 
