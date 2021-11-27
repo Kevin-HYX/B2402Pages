@@ -1,9 +1,11 @@
+body{
+    margin: 1cm;
+}
+
 .picture_container img {
     /*图片圆角*/
     border-radius: 5%;
     /*图片尺寸*/
-    height: auto;
+    height: 100%;
     width: auto;
-    margin-left: 0.7cm;
-    margin-right: 0.7cm;
 }
