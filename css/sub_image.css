@@ -6,6 +6,7 @@ body{
     /*图片圆角*/
     border-radius: 5%;
     /*图片尺寸*/
-    height: 100%;
-    width: auto;
+    height: auto;
+    width: 100%;
 }
+
