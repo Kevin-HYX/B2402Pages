@@ -36,6 +36,8 @@ GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Wed.json
 ###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Two.json
 ###
+GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/json/Classic.json
+###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/image/banqi.png
 ###
 GET https://purge.jsdelivr.net/gh/Kevin-HYX/B2402Pages/js/SecretLeader.js
