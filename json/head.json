@@ -1,36 +1,36 @@
 [
   {
-    "title": "(重磅回归)经典永流传",
+    "title": "经典永流传",
     "dir_name": "Classic"
   },
   {
-    "title": "本周常驻专辑-山水诗篇",
-    "dir_name": "shanshui"
+    "title": "迈克尔·杰克逊",
+    "dir_name": "Michel",
+    "week": [0,4,5]
   },
   {
-    "title": "中国好声音-巅峰之夜",
-    "dir_name": "dianfen",
-    "week": [2,3,4]
+    "title": "世界上只有一个邓紫棋",
+    "dir_name": "GEM",
+    "week": [1,2,3]
   },
   {
-    "title": "传奇戳爷",
-    "dir_name": "chuoye",
-    "week": [0,1,5]
+    "title": "古风(Ⅰ)",
+    "dir_name": "Gufeng1",
+    "week": [1, 0]
   },
   {
-    "title": "明日方舟(Ⅰ)",
-    "dir_name": "mingri10",
-    "week": [1,0]
+    "title": "古风(Ⅱ)",
+    "dir_name": "Gufeng2",
+    "week": [2, 3]
   },
   {
-    "title": "明日方舟（Ⅱ）",
-    "dir_name": "mingri20",
-    "week": [2,3]
+    "title": "轻音乐-静听水无声",
+    "dir_name": "Light1",
+    "week": [0, 3, 5]
   },
   {
-    "title": "明日方舟（Ⅲ）",
-    "dir_name": "mingri30",
-    "week": [4,5]
+    "title": "轻音乐-静听水无声",
+    "dir_name": "Light2",
+    "week": [1, 2, 4]
   }
-
 ]
